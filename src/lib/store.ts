@@ -19,6 +19,23 @@ export interface GeneratedResume {
   roleId: string;
 }
 
+// Resume the user uploaded themselves (separate from AI-generated `resume`)
+export interface UploadedResume {
+  filename: string;
+  size: number; // bytes
+  mimeType: string;
+  uploadedAt: number; // epoch ms
+  dataUrl: string; // base64 data URL — local mock persistence
+}
+
+export interface AppliedJobRecord {
+  appliedAt: number;
+  refId: string;
+  resumeName: string;
+  jobTitle: string;
+  company: string;
+}
+
 interface RizeState {
   onboarded: boolean;
   profile: UserProfile | null;
@@ -27,6 +44,9 @@ interface RizeState {
   completedSteps: string[];
   inProgressSteps: string[];
   resume: GeneratedResume | null;
+  uploadedResume: UploadedResume | null;
+  useResumeForEasyApply: boolean;
+  appliedJobs: Record<string, AppliedJobRecord>;
   setProfile: (p: Partial<UserProfile>) => void;
   setQuizAnswer: (qid: string, score: number) => void;
   selectRole: (roleId: string) => void;
@@ -34,6 +54,11 @@ interface RizeState {
   toggleStep: (stepId: string) => void;
   startStep: (stepId: string) => void;
   saveResume: (r: GeneratedResume) => void;
+  setUploadedResume: (r: UploadedResume) => void;
+  clearUploadedResume: () => void;
+  setUseResumeForEasyApply: (v: boolean) => void;
+  markJobApplied: (jobId: string, info: { jobTitle: string; company: string }) => AppliedJobRecord | null;
+  hasAppliedTo: (jobId: string) => boolean;
   reset: () => void;
 
   // Derived
