@@ -62,6 +62,11 @@ export default function Profile() {
         </div>
 
         <div className="px-5 mt-5">
+          <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2 px-1">Resume</h3>
+          <ResumeManager />
+        </div>
+
+        <div className="px-5 mt-5">
           <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2 px-1">About you</h3>
           <div className="bg-card rounded-2xl border border-border divide-y divide-border">
             <Row icon={GraduationCap} label="College" value={profile?.college || "—"} />
