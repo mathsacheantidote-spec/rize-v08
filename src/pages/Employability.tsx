@@ -14,6 +14,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { useRize } from "@/lib/store";
 import { JOB_ROLES } from "@/lib/rize-data";
 import { JobListingsSection } from "@/components/employability/JobListingsSection";
+import { TrendsDashboard } from "@/components/employability/trends/TrendsDashboard";
 
 interface ProjectRow {
   id: string;
