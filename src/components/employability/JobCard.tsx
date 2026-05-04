@@ -1,7 +1,11 @@
-import { ExternalLink, MapPin, Building2, Briefcase, Clock } from "lucide-react";
+import { useState } from "react";
+import { ExternalLink, MapPin, Building2, Briefcase, Clock, CheckCircle2, Zap } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
+import { useRize } from "@/lib/store";
+import { EasyApplyModal } from "./EasyApplyModal";
 import type { Job } from "@/hooks/useJobListings";
 
 interface JobCardProps {
@@ -14,8 +18,17 @@ export function JobCard({ job, userSkills }: JobCardProps) {
   const descWords = (job.description || "").toLowerCase();
   const matchedSkills = normalizedSkills.filter((skill) => descWords.includes(skill));
 
+  const application = useRize((s) => s.appliedJobs[job.id]);
+  const [easyOpen, setEasyOpen] = useState(false);
+
   const publishedLabel = job.publishedAt
     ? new Date(job.publishedAt).toLocaleDateString("en-IN", {
+        day: "numeric", month: "short", year: "numeric",
+      })
+    : null;
+
+  const appliedLabel = application
+    ? new Date(application.appliedAt).toLocaleDateString("en-IN", {
         day: "numeric", month: "short", year: "numeric",
       })
     : null;
@@ -70,13 +83,45 @@ export function JobCard({ job, userSkills }: JobCardProps) {
         )}
       </CardContent>
 
-      <CardFooter className="pt-2">
-        <Button asChild size="sm" className="w-full gap-2">
-          <a href={job.applyUrl} target="_blank" rel="noreferrer">
-            Apply Now <ExternalLink className="h-3.5 w-3.5" />
+      <CardFooter className="pt-2 gap-2">
+        {application ? (
+          <TooltipProvider>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                {/* span wrapper so disabled button still triggers tooltip */}
+                <span className="flex-1">
+                  <Button
+                    size="sm"
+                    variant="secondary"
+                    disabled
+                    className="w-full gap-1.5 cursor-not-allowed"
+                  >
+                    <CheckCircle2 className="h-3.5 w-3.5" /> Applied
+                  </Button>
+                </span>
+              </TooltipTrigger>
+              <TooltipContent>
+                You applied on {appliedLabel} · {application.refId}
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
+        ) : (
+          <Button
+            size="sm"
+            className="flex-1 gap-1.5"
+            onClick={() => setEasyOpen(true)}
+          >
+            <Zap className="h-3.5 w-3.5" /> Easy Apply
+          </Button>
+        )}
+        <Button asChild size="sm" variant="outline" className="px-2.5" title="Open original posting">
+          <a href={job.applyUrl} target="_blank" rel="noreferrer" aria-label="Open original posting">
+            <ExternalLink className="h-3.5 w-3.5" />
           </a>
         </Button>
       </CardFooter>
+
+      <EasyApplyModal job={job} open={easyOpen} onOpenChange={setEasyOpen} />
     </Card>
   );
 }
