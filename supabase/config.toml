@@ -1,0 +1,4 @@
+project_id = "xronvabympjekfhcytsv"
+
+[functions.fetch-jobs]
+verify_jwt = false
