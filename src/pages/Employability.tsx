@@ -384,6 +384,11 @@ export default function Employability() {
                 </div>
               )}
             </TabsContent>
+
+            {/* JOB TRENDS */}
+            <TabsContent value="trends" className="mt-5">
+              <TrendsDashboard />
+            </TabsContent>
           </Tabs>
         </div>
       </div>
