@@ -198,10 +198,11 @@ export default function Employability() {
 
         <div className="relative px-5 lg:px-0 mt-5">
           <Tabs value={tab} onValueChange={(v) => setTab(v as any)}>
-            <TabsList className="grid grid-cols-3 w-full max-w-xl bg-card shadow-card">
+            <TabsList className="grid grid-cols-4 w-full max-w-2xl bg-card shadow-card">
               <TabsTrigger value="mine">My Projects</TabsTrigger>
-              <TabsTrigger value="showcase">Employer Showcase</TabsTrigger>
-              <TabsTrigger value="suggest">AI Project Ideas</TabsTrigger>
+              <TabsTrigger value="showcase">Showcase</TabsTrigger>
+              <TabsTrigger value="suggest">AI Ideas</TabsTrigger>
+              <TabsTrigger value="trends">Job Trends</TabsTrigger>
             </TabsList>
 
             {/* MY PROJECTS */}
