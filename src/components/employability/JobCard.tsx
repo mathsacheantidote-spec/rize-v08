@@ -114,9 +114,10 @@ export function JobCard({ job, userSkills }: JobCardProps) {
             <Zap className="h-3.5 w-3.5" /> Easy Apply
           </Button>
         )}
-        <Button asChild size="sm" variant="outline" className="px-2.5" title="Open original posting">
-          <a href={job.applyUrl} target="_blank" rel="noreferrer" aria-label="Open original posting">
+        <Button asChild size="sm" variant="outline" className="gap-1.5" title={`Open on ${job.source}`}>
+          <a href={job.applyUrl} target="_blank" rel="noreferrer" aria-label={`Apply manually on ${job.source}`}>
             <ExternalLink className="h-3.5 w-3.5" />
+            <span className="hidden sm:inline">{job.source || "Apply"}</span>
           </a>
         </Button>
       </CardFooter>
