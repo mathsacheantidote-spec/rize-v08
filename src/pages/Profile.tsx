@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { AppShell } from "@/components/AppShell";
+import { ResumeManager } from "@/components/profile/ResumeManager";
 import { useRize } from "@/lib/store";
 import { ChevronRight, LogOut, Moon, Bell, FileText, Target, GraduationCap, Award, Building2 } from "lucide-react";
 import { useEffect, useState } from "react";
@@ -58,6 +59,11 @@ export default function Profile() {
               </div>
             ))}
           </div>
+        </div>
+
+        <div className="px-5 mt-5">
+          <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2 px-1">Resume</h3>
+          <ResumeManager />
         </div>
 
         <div className="px-5 mt-5">
