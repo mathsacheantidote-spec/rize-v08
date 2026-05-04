@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { AppShell } from "@/components/AppShell";
+import { ResumeManager } from "@/components/profile/ResumeManager";
 import { useRize } from "@/lib/store";
 import { ChevronRight, LogOut, Moon, Bell, FileText, Target, GraduationCap, Award, Building2 } from "lucide-react";
 import { useEffect, useState } from "react";
