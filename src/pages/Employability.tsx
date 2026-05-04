@@ -47,7 +47,7 @@ export default function Employability() {
   const role = useRize((s) => s.getRole)();
   const [userId, setUserId] = useState<string | null>(null);
   const [authChecked, setAuthChecked] = useState(false);
-  const [tab, setTab] = useState<"mine" | "showcase" | "suggest">("mine");
+  const [tab, setTab] = useState<"mine" | "showcase" | "suggest" | "trends">("mine");
 
   // Projects
   const [myProjects, setMyProjects] = useState<ProjectRow[]>([]);
