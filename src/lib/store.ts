@@ -87,6 +87,9 @@ export const useRize = create<RizeState>()(
       completedSteps: ["f1", "f2"],
       inProgressSteps: ["f3"],
       resume: null,
+      uploadedResume: null,
+      useResumeForEasyApply: true,
+      appliedJobs: {},
 
       setProfile: (p) =>
         set((s) => ({ profile: { ...(s.profile ?? initialProfile), ...p } })),
@@ -122,6 +125,28 @@ export const useRize = create<RizeState>()(
 
       saveResume: (r) => set({ resume: r }),
 
+      setUploadedResume: (r) => set({ uploadedResume: r }),
+      clearUploadedResume: () => set({ uploadedResume: null }),
+      setUseResumeForEasyApply: (v) => set({ useResumeForEasyApply: v }),
+
+      markJobApplied: (jobId, info) => {
+        const existing = get().appliedJobs[jobId];
+        if (existing) return existing;
+        // APP-2025-XXXXX reference id
+        const rand = Math.random().toString(36).slice(2, 7).toUpperCase();
+        const record: AppliedJobRecord = {
+          appliedAt: Date.now(),
+          refId: `APP-${new Date().getFullYear()}-${rand}`,
+          resumeName: get().uploadedResume?.filename ?? "resume",
+          jobTitle: info.jobTitle,
+          company: info.company,
+        };
+        set((s) => ({ appliedJobs: { ...s.appliedJobs, [jobId]: record } }));
+        return record;
+      },
+
+      hasAppliedTo: (jobId) => Boolean(get().appliedJobs[jobId]),
+
       reset: () =>
         set({
           onboarded: false,
@@ -131,6 +156,9 @@ export const useRize = create<RizeState>()(
           completedSteps: [],
           inProgressSteps: [],
           resume: null,
+          uploadedResume: null,
+          useResumeForEasyApply: true,
+          appliedJobs: {},
         }),
 
       getRole: () => {
