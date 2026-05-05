@@ -76,7 +76,7 @@ export function JobCard({ job, userSkills }: JobCardProps) {
                 key={skill}
                 className="text-[10px] bg-emerald-100 text-emerald-700 hover:bg-emerald-100 border-emerald-200"
               >
-                ✓ {skill}
+                {skill}
               </Badge>
             ))}
           </div>
