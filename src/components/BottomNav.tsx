@@ -148,7 +148,6 @@ export function SideNav() {
                 aria-label="Change target role"
               >
                 <div className="flex items-start gap-2">
-                  <div className="text-2xl leading-none">{role.emoji}</div>
                   <div className="flex-1 min-w-0">
                     <div className="font-display font-bold text-sm leading-tight truncate">{role.title}</div>
                     <div className="text-[10px] text-muted-foreground mt-0.5">{role.domain}</div>
@@ -175,7 +174,6 @@ export function SideNav() {
                           active ? "bg-primary/10 text-primary" : "hover:bg-muted"
                         )}
                       >
-                        <span className="text-lg leading-none">{r.emoji}</span>
                         <span className="flex-1 min-w-0">
                           <span className="block font-semibold text-sm leading-tight truncate">{r.title}</span>
                           <span className="block text-[10px] text-muted-foreground">{r.domain}</span>
