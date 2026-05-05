@@ -68,7 +68,7 @@ export default function GapReport() {
           </h3>
           {gaps.length === 0 && (
             <div className="bg-accent-soft text-accent rounded-2xl p-4 text-sm font-medium">
-              🎉 No major gaps detected — keep building depth.
+              No major gaps detected — keep building depth.
             </div>
           )}
           {gaps.map((g) => (

@@ -1,7 +1,7 @@
 import { AppShell } from "@/components/AppShell";
 import { useRize } from "@/lib/store";
 import { ScoreRing } from "@/components/ScoreRing";
-import { Award, Target, CheckCircle2, RefreshCw } from "lucide-react";
+import { Award, Target, CheckCircle2, RefreshCw, Sprout, Flame, Layers, Zap, FileText, Trophy } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis,
@@ -40,12 +40,12 @@ export default function Skills() {
   const employability = 67;
 
   const badges = [
-    { id: "starter", name: "First Step", earned: completed.length >= 1, icon: "🌱" },
-    { id: "streak", name: "On a Roll", earned: completed.length >= 3, icon: "🔥" },
-    { id: "foundation", name: "Foundation", earned: completed.length >= 4, icon: "🧱" },
-    { id: "halfway", name: "Halfway Hero", earned: overall >= 50, icon: "⚡" },
-    { id: "ats", name: "ATS Ready", earned: overall >= 70, icon: "📝" },
-    { id: "champion", name: "Champion", earned: overall >= 85, icon: "🏆" },
+    { id: "starter", name: "First Step", earned: completed.length >= 1, Icon: Sprout },
+    { id: "streak", name: "On a Roll", earned: completed.length >= 3, Icon: Flame },
+    { id: "foundation", name: "Foundation", earned: completed.length >= 4, Icon: Layers },
+    { id: "halfway", name: "Halfway Hero", earned: overall >= 50, Icon: Zap },
+    { id: "ats", name: "ATS Ready", earned: overall >= 70, Icon: FileText },
+    { id: "champion", name: "Champion", earned: overall >= 85, Icon: Trophy },
   ];
 
   return (
@@ -172,7 +172,7 @@ export default function Skills() {
               <div key={b.id} className={`aspect-square rounded-2xl flex flex-col items-center justify-center text-center p-2 border transition-base ${
                 b.earned ? "bg-gradient-card border-primary/30 shadow-card" : "bg-muted/40 border-dashed border-border opacity-60"
               }`}>
-                <span className={`text-3xl ${b.earned ? "" : "grayscale"}`}>{b.icon}</span>
+                <b.Icon className={`h-7 w-7 ${b.earned ? "text-primary" : "text-muted-foreground"}`} />
                 <span className="text-[10px] font-semibold mt-1 leading-tight">{b.name}</span>
               </div>
             ))}
