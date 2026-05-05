@@ -27,7 +27,7 @@ export default function Home() {
 
         <header className="relative px-5 pt-6 flex items-center justify-between text-primary-foreground">
           <div>
-            <p className="text-xs font-medium text-white/75">Hey {firstName} 👋</p>
+            <p className="text-xs font-medium text-white/75">Hey {firstName}</p>
             <p className="font-display text-lg font-bold leading-tight">You're {overall}% ready for {role.title}</p>
           </div>
           <button className="h-10 w-10 rounded-full bg-white/15 backdrop-blur border border-white/20 flex items-center justify-center tap-scale" aria-label="Notifications">
@@ -39,7 +39,7 @@ export default function Home() {
           <div className="bg-card rounded-3xl shadow-elevated p-5 flex items-center gap-5 animate-float-up">
             <ScoreRing value={overall} size={120} strokeWidth={10} label="Skill Score" />
             <div className="flex-1 min-w-0">
-              <p className="text-xs font-semibold uppercase tracking-wider text-primary">{role.emoji} {role.title}</p>
+              <p className="text-xs font-semibold uppercase tracking-wider text-primary">{role.title}</p>
               <p className="text-sm text-muted-foreground mt-1 leading-snug">
                 Keep going — {Math.max(0, 60 - overall)}% to unlock the AI Resume Builder.
               </p>
@@ -68,7 +68,7 @@ export default function Home() {
                   <q.icon className="h-4 w-4" />
                 </span>
                 <span className="text-[11px] font-medium">{q.label}</span>
-                {q.lock && <span className="text-[9px] text-muted-foreground">🔒 60%</span>}
+                {q.lock && <span className="text-[9px] text-muted-foreground">Locked · 60%</span>}
               </Wrapper>
             );
           })}
@@ -83,7 +83,7 @@ export default function Home() {
           <div className="space-y-2.5">
             {todos.length === 0 && (
               <div className="text-center py-8 text-muted-foreground text-sm bg-card rounded-2xl border border-dashed border-border">
-                🎉 You're all caught up!
+                You're all caught up.
               </div>
             )}
             {todos.map((s) => {
@@ -128,7 +128,7 @@ export default function Home() {
                 <h3 className="font-display font-bold text-sm leading-snug line-clamp-3">{n.headline}</h3>
                 <p className="text-[11px] text-muted-foreground mt-2 line-clamp-2">{n.summary}</p>
                 <div className="mt-3 pt-3 border-t border-border">
-                  <p className="text-[10px] font-semibold text-primary mb-1">✨ Why this matters for you</p>
+                  <p className="text-[10px] font-semibold text-primary mb-1">Why this matters for you</p>
                   <p className="text-[11px] text-foreground/80 leading-snug">{n.whyForYou}</p>
                 </div>
               </article>
