@@ -29,7 +29,7 @@ export const ROADMAPS: RoadmapDef[] = [
   {
     id: "frontend",
     title: "Frontend Developer",
-    emoji: "🎨",
+    emoji: "",
     description: "Build beautiful, fast, accessible web interfaces with modern tooling.",
     sections: [
       {
@@ -92,7 +92,7 @@ export const ROADMAPS: RoadmapDef[] = [
   {
     id: "backend",
     title: "Backend Developer",
-    emoji: "⚙️",
+    emoji: "",
     description: "Design APIs, databases and scalable services.",
     sections: [
       { id: "be-lang", title: "Language", nodes: [
@@ -122,7 +122,7 @@ export const ROADMAPS: RoadmapDef[] = [
   {
     id: "devops",
     title: "DevOps / Cloud",
-    emoji: "☁️",
+    emoji: "",
     description: "Automate, scale, and operate reliable cloud infrastructure.",
     sections: [
       { id: "do-os", title: "OS & Networking", nodes: [
@@ -146,7 +146,7 @@ export const ROADMAPS: RoadmapDef[] = [
   {
     id: "fullstack",
     title: "Full Stack",
-    emoji: "🧩",
+    emoji: "",
     description: "Combine frontend, backend and deployment to ship complete products.",
     sections: [
       { id: "fs-fe", title: "Frontend Core", nodes: [
@@ -169,7 +169,7 @@ export const ROADMAPS: RoadmapDef[] = [
   {
     id: "dsa",
     title: "DSA & Competitive Programming",
-    emoji: "🧠",
+    emoji: "",
     description: "Master data structures, algorithms and problem-solving.",
     sections: [
       { id: "dsa-basic", title: "Foundations", nodes: [
@@ -194,7 +194,7 @@ export const ROADMAPS: RoadmapDef[] = [
   {
     id: "ai-ml",
     title: "AI / Machine Learning",
-    emoji: "🤖",
+    emoji: "",
     description: "From math foundations to building real ML & LLM systems.",
     sections: [
       { id: "ml-math", title: "Math", nodes: [
@@ -218,7 +218,7 @@ export const ROADMAPS: RoadmapDef[] = [
   {
     id: "mobile",
     title: "Android / iOS",
-    emoji: "📱",
+    emoji: "",
     description: "Ship native and cross-platform mobile apps.",
     sections: [
       { id: "mob-cross", title: "Cross-platform", nodes: [
@@ -239,7 +239,7 @@ export const ROADMAPS: RoadmapDef[] = [
   {
     id: "system-design",
     title: "System Design",
-    emoji: "🏗️",
+    emoji: "",
     description: "Design scalable, reliable distributed systems.",
     sections: [
       { id: "sd-foundations", title: "Foundations", nodes: [

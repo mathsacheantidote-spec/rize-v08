@@ -50,7 +50,7 @@ export default function GapReport() {
             <Sparkles className="h-3 w-3" /> Your Skill Gap Report
           </span>
           <h1 className="font-display text-2xl font-bold mt-3">You're <span className="italic">{overall}%</span> ready for</h1>
-          <p className="font-display text-3xl font-bold">{role.emoji} {role.title}</p>
+          <p className="font-display text-3xl font-bold">{role.title}</p>
         </div>
 
         <div className="relative mx-6 -mt-2">
@@ -68,7 +68,7 @@ export default function GapReport() {
           </h3>
           {gaps.length === 0 && (
             <div className="bg-accent-soft text-accent rounded-2xl p-4 text-sm font-medium">
-              🎉 No major gaps detected — keep building depth.
+              No major gaps detected — keep building depth.
             </div>
           )}
           {gaps.map((g) => (

@@ -212,7 +212,7 @@ export default function Resume() {
             <ArrowLeft className="h-3 w-3" /> Home
           </Link>
           <p className="text-xs font-medium text-white/75">AI-generated for</p>
-          <h1 className="font-display text-2xl font-bold">{role.emoji} {role.title}</h1>
+          <h1 className="font-display text-2xl font-bold">{role.title}</h1>
           <div className="mt-3 flex flex-wrap gap-2">
             <div className="bg-white/15 backdrop-blur border border-white/20 rounded-full px-3 py-1 text-xs font-semibold flex items-center gap-1.5">
               <Sparkles className="h-3 w-3" /> ATS {data.atsScore}/100

@@ -228,7 +228,7 @@ export default function Admin() {
                     }`}>{i + 1}</span>
                     <div className="flex-1 min-w-0">
                       <p className="text-sm font-semibold truncate">{s.name}</p>
-                      <p className="text-[10px] text-muted-foreground truncate">{role?.emoji} {role?.title}</p>
+                      <p className="text-[10px] text-muted-foreground truncate">{role?.title}</p>
                     </div>
                     <span className="text-sm font-bold tabular-nums">{s.skillScore}%</span>
                   </li>
@@ -252,7 +252,7 @@ export default function Admin() {
                     : "bg-card border-border hover:border-primary/40"
                 }`}
               >
-                {role.emoji} {role.title} <span className="opacity-70">· {count} ({pct}%)</span>
+                {role.title} <span className="opacity-70">· {count} ({pct}%)</span>
               </button>
             ))}
             {roleFilter !== "all" && (
@@ -304,7 +304,7 @@ export default function Admin() {
                         <p className="text-[11px] text-muted-foreground">{s.email}</p>
                       </td>
                       <td className="py-3 px-2 text-xs">{s.program} · {s.year}</td>
-                      <td className="py-3 px-2 text-xs">{role?.emoji} {role?.title}</td>
+                      <td className="py-3 px-2 text-xs">{role?.title}</td>
                       <td className="py-3 px-2 text-right tabular-nums text-xs">{s.stepsCompleted}</td>
                       <td className="py-3 px-2 text-right">
                         <div className="inline-flex items-center gap-2">
@@ -346,7 +346,7 @@ export default function Admin() {
                   <div className="flex items-start justify-between gap-2">
                     <div className="min-w-0">
                       <p className="font-semibold text-sm truncate">{s.name}</p>
-                      <p className="text-[11px] text-muted-foreground truncate">{role?.emoji} {role?.title} · {s.program}</p>
+                      <p className="text-[11px] text-muted-foreground truncate">{role?.title} · {s.program}</p>
                     </div>
                     <span className="text-sm font-bold tabular-nums">{s.skillScore}%</span>
                   </div>

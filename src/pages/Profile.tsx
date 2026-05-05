@@ -46,7 +46,7 @@ export default function Profile() {
           <h1 className="font-display text-xl font-bold mt-3">{profile?.name || "Your name"}</h1>
           <p className="text-xs text-white/75">{profile?.email}</p>
           <span className="mt-2 text-[11px] font-semibold bg-white/15 backdrop-blur px-3 py-1 rounded-full border border-white/20">
-            {role.emoji} {role.title}
+            {role.title}
           </span>
         </div>
 

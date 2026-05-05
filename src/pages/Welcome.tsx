@@ -45,7 +45,7 @@ const STATS = [
   { value: "10K+", label: "Students" },
   { value: "94%", label: "Placement Rate" },
   { value: "500+", label: "Mentors" },
-  { value: "4.9★", label: "Rating" },
+  { value: "4.9", label: "Rating" },
 ];
 
 export default function Welcome() {
