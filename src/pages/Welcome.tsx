@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Code2, FileText, Map, Target, ArrowRight, Sparkles, Zap, Users } from "lucide-react";
 import { AppShell } from "@/components/AppShell";
+import { ParticleField } from "@/components/ParticleField";
 import { supabase } from "@/integrations/supabase/client";
 import rizeLogo from "@/assets/rize-logo.png";
 
@@ -110,6 +111,7 @@ export default function Welcome() {
         style={cursorStyle}
         className="relative min-h-screen overflow-hidden bg-background"
       >
+        <ParticleField />
         {/* Background layers */}
         <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(hsl(var(--border)/0.12)_1px,transparent_1px),linear-gradient(90deg,hsl(var(--border)/0.12)_1px,transparent_1px)] bg-[size:64px_64px] opacity-30 [mask-image:radial-gradient(ellipse_70%_60%_at_50%_40%,black,transparent)]" />
         <div className="pointer-events-none absolute inset-0 bg-gradient-hero opacity-90" />
@@ -138,7 +140,7 @@ export default function Welcome() {
         <div className="pointer-events-none absolute bottom-[22%] right-[8%] h-24 w-24 rounded-full border border-primary/15 bg-primary/5 animate-ambient-drift" style={{ animationDelay: "1.2s" }} />
         <div className="pointer-events-none absolute right-[25%] top-[12%] h-12 w-12 rounded-full border border-primary/10 bg-primary/5 animate-ambient-drift" style={{ animationDelay: "2.4s" }} />
 
-        <div className="relative mx-auto flex min-h-screen max-w-7xl flex-col px-6 py-6 lg:px-10">
+        <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl flex-col px-6 py-6 lg:px-10">
           {/* Nav */}
           <nav className="flex items-center justify-between animate-slide-up">
             <Link to="/" className="flex items-center gap-2">
