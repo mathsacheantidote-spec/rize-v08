@@ -253,7 +253,6 @@ export default function CareerAssessment() {
                         : "border-border hover:border-primary/40",
                     )}
                   >
-                    <div className="text-3xl">{c.emoji}</div>
                     <div className="font-display font-bold mt-2 leading-tight">{c.title}</div>
                     <div className="text-xs text-muted-foreground mt-1">{c.desc}</div>
                   </button>
@@ -279,7 +278,7 @@ export default function CareerAssessment() {
             <div className="mb-6">
               <div className="flex items-center justify-between mb-2">
                 <p className="text-[11px] font-bold uppercase tracking-wider text-primary">
-                  {career.emoji} {career.title}
+                  {career.title}
                 </p>
                 <p className="text-xs text-muted-foreground">
                   Question {qIndex + 1} of {quiz.length}
@@ -330,13 +329,12 @@ export default function CareerAssessment() {
           <div className="max-w-3xl mx-auto animate-in fade-in duration-300">
             <Card className="p-6 text-center">
               <p className="text-[11px] font-bold uppercase tracking-wider text-primary">
-                {career.emoji} {career.title}
+                {career.title}
               </p>
               <h1 className="font-display text-3xl font-bold mt-2">
                 You scored {score} out of {quiz.length}
               </h1>
               <div className={cn("mt-3 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-muted font-semibold", level.color)}>
-                <span className="text-lg">{level.emoji}</span>
                 <span>{level.name}</span>
               </div>
               <p className="text-sm text-muted-foreground mt-2">{level.msg}</p>
@@ -423,11 +421,11 @@ export default function CareerAssessment() {
             <Card className="p-6 mb-6">
               <p className="text-[11px] font-bold uppercase tracking-wider text-primary">Your personalized learning path</p>
               <h1 className="font-display text-3xl font-bold mt-1 leading-tight">
-                {career.emoji} {career.title}
+                {career.title}
               </h1>
               <div className="mt-3 flex flex-wrap items-center gap-2">
                 <Badge variant="secondary" className={cn("text-sm", level.color)}>
-                  {level.emoji} {level.name}
+                  {level.name}
                 </Badge>
                 <span className="text-xs text-muted-foreground">{stages.length} stages • Progression-based</span>
               </div>
