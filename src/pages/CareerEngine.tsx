@@ -26,7 +26,7 @@ export default function CareerEngine() {
             <div className="mt-4 space-y-3">
               {matches.map(({ role: match, score }) => (
                 <div key={match.id} className="rounded-xl border border-border bg-secondary p-3">
-                  <div className="flex items-center justify-between"><span className="font-semibold">{match.emoji} {match.title}</span><span className="text-sm font-bold text-accent">{score}%</span></div>
+                  <div className="flex items-center justify-between"><span className="font-semibold">{match.title}</span><span className="text-sm font-bold text-accent">{score}%</span></div>
                   <div className="mt-2 h-2 rounded-full bg-muted overflow-hidden"><div className="h-full bg-gradient-primary" style={{ width: `${score}%` }} /></div>
                   <p className="mt-2 text-xs text-muted-foreground">Signal: {match.keywords.slice(0, 3).join(" · ")}</p>
                 </div>
