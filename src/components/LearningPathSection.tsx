@@ -4,6 +4,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { CheckCircle2, BookOpen, FlaskConical, Rocket, Video, FileText, Library, Trophy, type LucideIcon } from "lucide-react";
 import {
   Select,
   SelectContent,
@@ -30,14 +31,14 @@ const EXPERIENCE_LEVELS = [
 
 interface Phase {
   title: string;
-  icon: string;
+  Icon: LucideIcon;
   items: string[];
 }
 
 const ML_PATH: Phase[] = [
   {
     title: "Phase 1 — Foundations (4 weeks)",
-    icon: "✅",
+    Icon: CheckCircle2,
     items: [
       "Python Programming Basics",
       "Linear Algebra & Statistics",
@@ -46,7 +47,7 @@ const ML_PATH: Phase[] = [
   },
   {
     title: "Phase 2 — Core ML (6 weeks)",
-    icon: "📘",
+    Icon: BookOpen,
     items: [
       "Supervised Learning (Regression, Classification)",
       "Unsupervised Learning (Clustering, PCA)",
@@ -55,7 +56,7 @@ const ML_PATH: Phase[] = [
   },
   {
     title: "Phase 3 — Advanced Topics (6 weeks)",
-    icon: "🔬",
+    Icon: FlaskConical,
     items: [
       "Deep Learning with TensorFlow / PyTorch",
       "Natural Language Processing (NLP)",
@@ -64,7 +65,7 @@ const ML_PATH: Phase[] = [
   },
   {
     title: "Phase 4 — Industry Ready (4 weeks)",
-    icon: "🚀",
+    Icon: Rocket,
     items: [
       "Build 2 end-to-end ML projects",
       "Practice on Kaggle",
@@ -76,7 +77,7 @@ const ML_PATH: Phase[] = [
 const WEB_DEV_PATH: Phase[] = [
   {
     title: "Phase 1 — Foundations (3 weeks)",
-    icon: "✅",
+    Icon: CheckCircle2,
     items: [
       "HTML5, CSS3, Responsive Design",
       "JavaScript ES6+ Fundamentals",
@@ -85,7 +86,7 @@ const WEB_DEV_PATH: Phase[] = [
   },
   {
     title: "Phase 2 — Frontend (5 weeks)",
-    icon: "📘",
+    Icon: BookOpen,
     items: [
       "React.js & Component Architecture",
       "State Management (Redux / Context API)",
@@ -94,7 +95,7 @@ const WEB_DEV_PATH: Phase[] = [
   },
   {
     title: "Phase 3 — Backend (5 weeks)",
-    icon: "🔬",
+    Icon: FlaskConical,
     items: [
       "Node.js & Express.js",
       "Databases: MySQL & MongoDB",
@@ -103,7 +104,7 @@ const WEB_DEV_PATH: Phase[] = [
   },
   {
     title: "Phase 4 — Industry Ready (3 weeks)",
-    icon: "🚀",
+    Icon: Rocket,
     items: [
       "Deploy a full stack project on Vercel/Railway",
       "Build a portfolio with 3 projects",
@@ -112,30 +113,30 @@ const WEB_DEV_PATH: Phase[] = [
   },
 ];
 
-const RESOURCES = [
+const RESOURCES: { Icon: LucideIcon; title: string; description: string; tag: string; to: string | null }[] = [
   {
-    icon: "📹",
+    Icon: Video,
     title: "Video Courses",
     description: "Curated from YouTube, Coursera & NPTEL",
     tag: "Free",
     to: null,
   },
   {
-    icon: "📄",
+    Icon: FileText,
     title: "Practice Problems",
     description: "Linked directly to your Coding Lab",
     tag: "Built-in",
     to: "/coding-lab",
   },
   {
-    icon: "📚",
+    Icon: Library,
     title: "Reading Materials",
     description: "Docs, blogs, and cheatsheets per topic",
     tag: "Free",
     to: null,
   },
   {
-    icon: "🏆",
+    Icon: Trophy,
     title: "Mock Interviews",
     description: "Role-specific interview question bank",
     tag: "Coming Soon",
@@ -273,7 +274,7 @@ export function LearningPathSection() {
                             key={j}
                             className="flex items-start gap-2 text-sm text-muted-foreground"
                           >
-                            <span className="flex-shrink-0">{phase.icon}</span>
+                            <phase.Icon className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
                             <span>{item}</span>
                           </li>
                         ))}
@@ -309,7 +310,7 @@ export function LearningPathSection() {
                     key={i}
                     className="p-4 flex flex-col gap-2 hover:border-primary/40 transition-base cursor-pointer tap-scale min-w-[200px]"
                   >
-                    <div className="text-3xl">{res.icon}</div>
+                    <res.Icon className="h-7 w-7 text-primary" />
                     <h4 className="font-display font-bold text-sm">
                       {res.title}
                     </h4>
